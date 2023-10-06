@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Tester {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        RPNCalculator calculator = new RPNCalculator();
+
+        while (true) {
+            displayMenu();
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter a valid RPN expression (e.g., 3,5,*,6,+,4,*,2,*): ");
+                    String rpnExpression = scanner.nextLine();
+                    System.out.print("Enter the delimiter character: ");
+                    String delimiter = scanner.nextLine();
+                    try {
+                        int result = calculator.evaluateRPN(rpnExpression, delimiter);
+                        System.out.println("Result: " + result);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
+                    break;
+                case 2:
+                    System.out.println("Exiting the calculator. Goodbye!");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please choose again.");
+            }
+        }
+    }
+
+    private static void displayMenu() {
+        System.out.println("RPN Calculator Menu:");
+        System.out.println("1. Calculate RPN Expression");
+        System.out.println("2. Exit");
+        System.out.print("Enter your choice: ");
+    }
+}

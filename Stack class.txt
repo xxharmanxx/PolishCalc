@@ -1,0 +1,22 @@
+public class Stack {
+    private List list;
+
+    public Stack() {
+        this.list = new List();
+    }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    public void push(int number) {
+        list.addToEnd(number);
+    }
+
+    public int pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is empty");
+        }
+        return list.removeFromEnd();
+    }
+}

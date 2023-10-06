@@ -1,0 +1,98 @@
+----------------------------------------------
+        RPN Calculator Project Report
+----------------------------------------------
+
+1. Introduction
+-------------------------------
+The RPN Calculator project addresses the need for a versatile calculator that can evaluate mathematical expressions in Reverse Polish Notation (RPN). RPN notation simplifies expression evaluation and is a valuable tool for various computational tasks.
+
+2. Summary of Requirements
+-------------------------------
+**Project Requirements:**
+- Accept postfix equations from the user
+- Process and calculate the answer using a custom stack
+- Implement a menu with options
+- Perform input validation and error handling
+
+**Successfully Implemented:**
+- Accepting postfix equations
+- Processing with custom stack
+- Menu with options
+
+**Requirements Partially Implemented:**
+- Input validation and error handling
+
+3. Design
+-------------------------------
+**Class Design:**
+- `List`: Represents a custom linked list.
+- `ListNode`: Nodes for the linked list, storing integer data.
+- `Stack`: Implements a stack data structure.
+- `RPNCalculator`: Performs RPN expression evaluation using a stack.
+- `Tester`: Main class to interact with the calculator.
+
+**Pseudocode (RPNCalculator):**
+```java
+Method: evaluateRPN
+  Input: RPN expression, delimiter
+  Output: Result of evaluation
+  Pseudocode:
+  -- Begin
+  Initialize an empty stack
+  Split RPN expression by delimiter into tokens
+  For each token in tokens
+    If token is an operand
+      Push token onto the stack
+    Else if token is an operator
+      Pop operands from the stack
+      Perform the operation
+      Push the result onto the stack
+  Return the result
+  -- End
+
+---------------------------------
+Test Plans & Results
+Test Plan for List and Stack Methods:
+
+Test 1: Push and Pop Operations on Stack
+
+Push 5, Push 10, Pop
+Expected Output: 5 (Top of the stack after the pop operation)
+Test 2: IsEmpty Check on Empty Stack
+
+Check if the stack is empty
+Expected Output: True
+Test Results:
+
+List and Stack methods passed all tests.
+Test Results for RPNCalculator:
+
+Test 1: Simple Addition
+
+Input: "2,3,+"
+Expected Output: 5
+Test 2: Complex Expression
+
+Input: "5,1,2,+,4,*,+,3,-"
+Expected Output: 14
+
+---------------------------------
+Challenges Faced:
+
+Challenge 1: Implementing input validation
+
+Solution attempted: Added basic input validation.
+Outcome: Successful for simple cases, but can be enhanced.
+Challenge 2: Handling complex RPN expressions
+
+Solution attempted: Extended testing for complex expressions.
+Outcome: Improved but may require further optimization.
+Lessons Learned:
+
+The importance of comprehensive testing.
+The value of structured design for complex projects
+
+
+---------------------------------
+Conclusion
+In conclusion, the RPN Calculator project successfully implements a calculator that can evaluate mathematical expressions in RPN notation. While some requirements were fully met, there are areas for improvement, particularly in input validation and error handling. This project provided valuable insights into stack data structures and algorithm design
